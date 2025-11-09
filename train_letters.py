@@ -47,5 +47,5 @@ model.fit(train_data, validation_data=val_data, epochs=5)
 
 # Save model
 model.save("letter_model_v2.h5")
+print("Model saved as letter_model_v2.h5")
 
-print("✅ Model saved as letter_model.h5")

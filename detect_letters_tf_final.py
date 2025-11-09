@@ -4,7 +4,7 @@ import tensorflow as tf
 import time
 
 # === Load trained TensorFlow model ===
-model = tf.keras.models.load_model("letter_model.h5")
+model = tf.keras.models.load_model("letter_model_v2.h5")
 class_names = ['H', 'S', 'U']
 
 # === Parameters ===

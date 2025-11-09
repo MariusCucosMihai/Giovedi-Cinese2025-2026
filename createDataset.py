@@ -15,11 +15,10 @@ POSSIBLE_FONTS = [
     "/home/pi/Arial.ttf",
     "/usr/share/fonts/truetype/msttcorefonts/Arial.ttf",
     "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
-    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 ]
 FONT_PATH = next((f for f in POSSIBLE_FONTS if os.path.exists(f)), None)
 if FONT_PATH is None:
-    raise FileNotFoundError("⚠️ No suitable font found. Please install Arial or DejaVuSans.")
+    raise FileNotFoundError("No suitable font found. Please install Arial or DejaVuSans.")
 
 FONT_SIZE = 95
 
@@ -46,8 +45,7 @@ for letter in LETTERS:
         text_x = (IMG_SIZE - text_w) // 2 + random.randint(-3, 3)
         text_y = (IMG_SIZE - text_h) // 2 + random.randint(-3, 3)
 
-        # --- Draw thick filled letter ---
-        # Draw multiple layers for bold/thickness
+        # Draw multiple layers for thickness
         for dx in [-5, 0, 5]:
             for dy in [-5, 0, 5]:
                 draw.text((text_x + dx, text_y + dy), letter, font=font, fill=(1, 1, 1))
@@ -79,5 +77,6 @@ for letter in LETTERS:
         filename = os.path.join(OUTPUT_DIR, letter, f"{letter}_{i:03d}.png")
         img.save(filename)
 
-print("✅ Dataset generated successfully!")
+print("Dataset generated successfully!")
 print(f"Check the '{OUTPUT_DIR}/' folder.")
+
